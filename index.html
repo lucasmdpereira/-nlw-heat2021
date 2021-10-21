@@ -17,6 +17,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <main>
       <div class="container">
@@ -26,40 +27,71 @@
           </span>
           <img src="images/ProfilePhoto.jpg" alt="Foto pesssoal" />
         </div>
-        <h1>Lucas Pereira</h1>
-        <a href="https://github.com/lucasmdpereira" target="_blank">
+        <h1 id="userName">Nome Sobrenome</h1>
+        <a href="https://github.com/user" target="_blank" id="github">
           <img src="images/github.svg" alt="ícone github" />
-          lucaspereira
+          <span id="githubUser">userGit</span>
         </a>
 
-        <p>
-          Tímido, mas sempre disposto a falar sobre tecnologia, plantas e
-          Kombis.
-        </p>
+        <p id="mensagem">Texto</p>
 
-        <ul>
-          <li>
-            <a href="https://youtube.com.br" target="_blank"
+        <ul id="socialLinks">
+          <li class="youtube">
+            <a href="https://youtube.com/user" target="_blank"
               ><img src="images/youtube.svg" alt="ícone youtube"
             /></a>
           </li>
-          <li>
-            <a href="https://www.instagram.com/estupendosenhor/" target="_blank"
+          <li class="instagram">
+            <a href="https://www.instagram.com/user" target="_blank"
               ><img src="images/instagram.svg" alt="ícone instagram"
             /></a>
           </li>
-          <li>
-            <a href="https://facebook.com" target="_blank"
+          <li class="facebook">
+            <a href="https://facebook.com/user" target="_blank"
               ><img src="images/facebook.svg" alt="ícone facebook"
             /></a>
           </li>
-          <li>
-            <a href="https://twitter.com/EstupendoSenhor" target="_blank"
+          <li class="twitter">
+            <a href="https://twitter.com/user" target="_blank"
               ><img src="images/twitter.svg" alt="ícone twitter"
             /></a>
           </li>
         </ul>
       </div>
     </main>
+
+    <script>
+      const name = 'Lucas Pereira'
+
+      const LinksSocialMedia = {
+        github: 'lucasmdpereira',
+        youtube: '',
+        instagram: 'estupendosenhor',
+        facebook: '',
+        twitter: 'EstupendoSenhor'
+      }
+
+      changeName()
+      changeMessage()
+      changeSocailMediaLinks()
+
+      function changeName() {
+        userName.textContent = name
+      }
+
+      function changeMessage() {
+        mensagem.textContent =
+          'Tímido, mas sempre disposto a falar sobre tecnologia, plantas e Kombis.'
+      }
+
+      function changeSocailMediaLinks() {
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+          li.children[0].href = `https://www.${social}.com/${LinksSocialMedia[social]}`
+        }
+        github.href = `https://www.github.com/${LinksSocialMedia.github}`
+        githubUser.textContent = LinksSocialMedia.github
+      }
+    </script>
   </body>
 </html>
