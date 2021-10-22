@@ -25,15 +25,19 @@
           <span>
             <img src="images/build.svg" alt="Selo Rocketseat" />
           </span>
-          <img src="images/ProfilePhoto.jpg" alt="Foto pesssoal" />
+          <img
+            src="https://lorempixel.com/185/185/people/"
+            alt="Foto pesssoal"
+            id="userImage"
+          />
         </div>
         <h1 id="userName">Nome Sobrenome</h1>
-        <a href="https://github.com/user" target="_blank" id="github">
+        <a id="userLink" href="https://github.com/user" target="_blank">
           <img src="images/github.svg" alt="ícone github" />
-          <span id="githubUser">userGit</span>
+          <spam id="userLogin">userGit</spam>
         </a>
 
-        <p id="mensagem">Texto</p>
+        <p id="userBio">Texto</p>
 
         <ul id="socialLinks">
           <li class="youtube">
@@ -60,38 +64,6 @@
       </div>
     </main>
 
-    <script>
-      const name = 'Lucas Pereira'
-
-      const LinksSocialMedia = {
-        github: 'lucasmdpereira',
-        youtube: '',
-        instagram: 'estupendosenhor',
-        facebook: '',
-        twitter: 'EstupendoSenhor'
-      }
-
-      changeName()
-      changeMessage()
-      changeSocailMediaLinks()
-
-      function changeName() {
-        userName.textContent = name
-      }
-
-      function changeMessage() {
-        mensagem.textContent =
-          'Tímido, mas sempre disposto a falar sobre tecnologia, plantas e Kombis.'
-      }
-
-      function changeSocailMediaLinks() {
-        for (let li of socialLinks.children) {
-          const social = li.getAttribute('class')
-          li.children[0].href = `https://www.${social}.com/${LinksSocialMedia[social]}`
-        }
-        github.href = `https://www.github.com/${LinksSocialMedia.github}`
-        githubUser.textContent = LinksSocialMedia.github
-      }
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
