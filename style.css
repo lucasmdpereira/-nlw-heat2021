@@ -16,13 +16,22 @@ body {
 body {
   display: grid;
   place-items: center;
+  background-color: hsl(240, 6%, 13%);
 }
 
 main {
-  background: url(images/background.svg);
-  width: 375px;
+  background: url(images/background.svg) no-repeat center;
+  min-width: 375px;
   height: 812px;
 }
+/*
+main {
+  background: url(images/background.svg) no-repeat center/cover;
+  width: 100vw;
+  min-height: 812px;
+  height: 100vh;
+}
+*/
 
 .container {
   max-width: 250px;
@@ -41,6 +50,25 @@ main {
   position: absolute;
   top: -15px;
   z-index: 2;
+  animation: spin 4s linear 2;
+  animation-direction: alternate-reverse;
+  animation-timing-function: ease-in-out;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 .avatar > img {
@@ -77,4 +105,21 @@ ul {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
+}
+
+ul li img:hover {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+.nlw_logo {
+  display: flex;
+  width: 8rem;
+  margin: 4rem auto;
+}
+
+@media (min-width: 720px) {
+  body {
+    background-color: hsl(240, 9%, 89%);
+  }
 }

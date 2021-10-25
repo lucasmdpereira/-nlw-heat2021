@@ -2,9 +2,8 @@ const name = 'Lucas Pereira'
 
 const LinksSocialMedia = {
   github: 'lucasmdpereira',
-  youtube: '',
+  linkedin: 'in/lucasmdpereira',
   instagram: 'estupendosenhor',
-  facebook: '',
   twitter: 'EstupendoSenhor'
 }
 
